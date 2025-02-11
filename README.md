@@ -26,14 +26,18 @@ Simply run this command to enter the WSL terminal,
 wsl
 ```
 
-Then run the following lines (preferably one by one) to clone the repository and run the server.
+Then run the following lines (preferably one by one) to clone and set up the repository.
 
 ```sh
 git clone https://github.com/raffimolero/Molero-Stage-1.git
 cd Molero-Stage-1.git
-npx prisma generate
-# of course, you should check ./run.sh before running this script.
-chmod +x ./run.sh
+chmod +x ./*.sh
+./restore.sh
+```
+
+Then run the server.
+
+```
 ./run.sh
 ```
 
@@ -65,7 +69,7 @@ pgAdmin is also available through http://localhost:5050/
 - nest new api
 - push to github
 - remove .env from .gitignore for demo purposes
-- pull out docker-compose, Dockerefile, run.sh, .dockerignore, and .gitattributes from inventory
+- pull out docker-compose, Dockerefile, \*.sh, .dockerignore, and .gitattributes from inventory
 - install extra modules that don't come by default somehow
 
 ```sh

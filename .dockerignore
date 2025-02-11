@@ -6,3 +6,4 @@ dist
 run.sh
 README.md
 docs
+pgdata

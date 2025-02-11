@@ -17,10 +17,11 @@ datasource db {
 model members {
   id              Int               @id @default(autoincrement())
   name            String            @db.VarChar(255)
-  // role must only be one of 'backend' | 'frontend' | 'UI/UX'
+  // NOTE: role must only be one of 'backend' | 'frontend' | 'UI/UX'
   // this would ideally an enum, but requirements specify special characters
   role            String            @db.VarChar(255)
   created_at      DateTime          @default(now())
+  // NOTE: updated_at can be non-nullable once the crud operations are in place
   updated_at      DateTime?         @updatedAt
   deleted_at      DateTime?
   member_projects member_projects[]

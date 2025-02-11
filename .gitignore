@@ -1,3 +1,6 @@
+# database files
+/pgdata
+
 # compiled output
 /dist
 /node_modules
