@@ -30,7 +30,7 @@ Then run the following lines (preferably one by one) to clone and set up the rep
 
 ```sh
 git clone https://github.com/raffimolero/Molero-Stage-1.git
-cd Molero-Stage-1.git
+cd Molero-Stage-1
 chmod +x ./*.sh
 ./restore.sh
 ```
