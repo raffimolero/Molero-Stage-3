@@ -29,12 +29,25 @@ Then run the following lines (preferably one by one) to clone the repository and
 ```sh
 git clone https://github.com/raffimolero/Molero-Stage-1.git
 cd Molero-Stage-1.git
+npx prisma generate
 # of course, you should check ./run.sh before running this script.
 chmod +x ./run.sh
 ./run.sh
 ```
 
 After the docker engine runs, you should be able to access the api through http://localhost:3000/
+
+pgAdmin is also available through http://localhost:5050/
+
+- I followed this tutorial so refer to it when using pgAdmin https://dev.to/chukwutosin_/step-by-step-guide-setting-up-a-nestjs-application-with-docker-and-postgresql-5hei
+- Should look something like this when setting up:
+  ![img](docs/pgadmin/1_login.png)
+  ![img](docs/pgadmin/2_addserver.png)
+  ![img](docs/pgadmin/2_addserver/2-1_general.png)
+  ![img](docs/pgadmin/2_addserver/2-2_connection.png)
+  ![img](docs/pgadmin/3_tables.png)
+
+(pardon me, i made a typo in spelling asdf when actually saving the server)
 
 # Other Notes:
 
@@ -49,7 +62,7 @@ After the docker engine runs, you should be able to access the api through http:
 - nest new api
 - push to github
 - remove .env from .gitignore for demo purposes
-- pull out docker-compose, Dockerefile, run.sh, and .gitattributes from inventory
+- pull out docker-compose, Dockerefile, run.sh, .dockerignore, and .gitattributes from inventory
 - install extra modules that don't come by default somehow
 
 ```sh
@@ -70,3 +83,17 @@ npx prisma init
   - database: sysdev_management (as instructed)
 
 - encode the schema for members, projects, and member_projects in prisma/schema.prisma
+- start up the database
+
+```sh
+# terminal 1
+./run.sh
+```
+
+- using a separate terminal, run the migration
+  - i'm aware that docker allows you to spawn the containers and reuse the same terminal for other things. i just decided to have an interactive bash session for convenience and because i can type `exit` instead of `docker compose down -v`
+
+```sh
+# terminal 2
+npx prisma migrate dev --name init
+```
