@@ -63,7 +63,10 @@ npx prisma init
 ```
 
 - modify DATABASE_URL in .env to have the correct username password and hostname
+
   - username: pgname
   - password: pgpass
   - hostname: db (defined in docker-compose.yml)
   - database: sysdev_management (as instructed)
+
+- encode the schema for members, projects, and member_projects in prisma/schema.prisma
