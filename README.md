@@ -1,18 +1,51 @@
 # Molero-Stage-1
 
-Stage 1 of the sysdev technical assessment.
+Stage 1 of the SAMAHAN SysDev technical assessment.
 
-# Notes:
+# About the project:
 
 - To be run in WSL 2 on Windows, or simply used in a Linux machine
-- Simply run ./run.sh in Linux (check the file if you have to)
-
 - Backend JS framework: Nest.js
 - Database: PostgreSQL (with pgAdmin)
 - Orchestrated with Docker
+- Works on my machine
 
-# Steps to create:
-- create github repo with readme
-- git clone to local machine
-- cd Molero-Stage-1
+# How to run:
+
+If you're on Windows, you must use WSL and start up Docker Desktop,
+otherwise it will complain that "Docker" can't be found on this machine.
+
+- WSL: https://learn.microsoft.com/en-us/windows/wsl/install
+- Docker desktop: https://docs.docker.com/desktop/setup/install/windows-install/
+
+Simply run this command to enter the WSL terminal,
+
+```bat
+wsl
+```
+
+Then run the following lines (preferably one by one) to clone the repository and run the server.
+
+```sh
+git clone https://github.com/raffimolero/Molero-Stage-1.git
+cd Molero-Stage-1.git
+# of course, you should check ./run.sh before running this script.
+chmod +x ./run.sh
+./run.sh
+```
+
+After the docker engine runs, you should be able to access the api through http://localhost:3000/
+
+# Other Notes:
+
+- nestjs is in localhost:3000/
+- pgadmin is in localhost:5050/
+  - username is admin@admin.com
+  - password is pgadmin4
+- postgresql is in localhost:5432/
+
+# How it was made:
+
 - nest new api
+- push to github
+- pull out docker-compose, Dockerefile, run.sh, and .gitattributes from inventory
