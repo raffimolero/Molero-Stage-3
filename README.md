@@ -41,13 +41,14 @@ pgAdmin is also available through http://localhost:5050/
 
 - I followed this tutorial so refer to it when using pgAdmin https://dev.to/chukwutosin_/step-by-step-guide-setting-up-a-nestjs-application-with-docker-and-postgresql-5hei
 - Should look something like this when setting up:
-  ![img](docs/pgadmin/1_login.png)
-  ![img](docs/pgadmin/2_addserver.png)
-  ![img](docs/pgadmin/2_addserver/2-1_general.png)
-  ![img](docs/pgadmin/2_addserver/2-2_connection.png)
-  ![img](docs/pgadmin/3_tables.png)
-
-(pardon me, i made a typo in spelling asdf when actually saving the server)
+  - ![img](docs/pgadmin/1_login.png)
+  - ![img](docs/pgadmin/2_addserver.png)
+  - server name can be anything, not necessarily `asdf`
+  - ![img](docs/pgadmin/2_addserver/2-1_general.png)
+  - ![img](docs/pgadmin/2_addserver/2-2_connection.png)
+  - ![img](docs/pgadmin/3_tables.png)
+  - ![img](docs/pgadmin/4_query.png)
+  - ![img](docs/pgadmin/4_query/4-1_tables.png)
 
 # Other Notes:
 
