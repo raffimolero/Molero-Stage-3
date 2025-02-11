@@ -21,7 +21,7 @@ model members {
   // this would ideally an enum, but requirements specify special characters
   role            String            @db.VarChar(255)
   created_at      DateTime          @default(now())
-  updated_at      DateTime          @updatedAt
+  updated_at      DateTime?         @updatedAt
   deleted_at      DateTime?
   member_projects member_projects[]
 }
