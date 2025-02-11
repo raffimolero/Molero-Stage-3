@@ -48,4 +48,16 @@ After the docker engine runs, you should be able to access the api through http:
 
 - nest new api
 - push to github
+- remove .env from .gitignore for demo purposes
 - pull out docker-compose, Dockerefile, run.sh, and .gitattributes from inventory
+- install extra modules that don't come by default somehow
+
+```sh
+npm i --save @nestjs/mapped-types @nestjs/common @nestjs/core
+```
+
+- install prisma by attempting to invoke it
+
+```sh
+npx prisma init
+```
