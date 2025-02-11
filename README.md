@@ -10,6 +10,8 @@ Stage 1 of the SAMAHAN SysDev technical assessment.
 - Orchestrated with Docker
 - Works on my machine
 
+I don't know how to set up MySQL as of the moment.
+
 # How to run:
 
 If you're on Windows, you must use WSL and start up Docker Desktop,
@@ -78,8 +80,8 @@ npx prisma init
 
 - modify DATABASE_URL in .env to have the correct username password and hostname
 
-  - username: pgname
-  - password: pgpass
+  - username: postgres
+  - password: postgres
   - hostname: db (defined in docker-compose.yml)
   - database: sysdev_management (as instructed)
 
@@ -98,3 +100,8 @@ npx prisma init
 # terminal 2
 npx prisma migrate dev --name init
 ```
+
+- open pgAdmin and sign in
+- connect to the postgres server
+- right click sysdev_management and open query tool
+- insert some members
