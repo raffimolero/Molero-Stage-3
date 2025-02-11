@@ -21,8 +21,7 @@ model members {
   // this would ideally an enum, but requirements specify special characters
   role            String            @db.VarChar(255)
   created_at      DateTime          @default(now())
-  // NOTE: updated_at can be non-nullable once the crud operations are in place
-  updated_at      DateTime?         @updatedAt
+  updated_at      DateTime          @updatedAt
   deleted_at      DateTime?
   member_projects member_projects[]
 }
@@ -37,11 +36,12 @@ model projects {
 }
 
 model member_projects {
-  project     projects @relation(fields: [projects_id], references: [id])
-  projects_id Int
-  member      members  @relation(fields: [member_id], references: [id])
   member_id   Int
-  assigned_at DateTime
+  projects_id Int
+  assigned_at DateTime @default(now())
+
+  member  members  @relation(fields: [member_id], references: [id])
+  project projects @relation(fields: [projects_id], references: [id])
 
   @@id([member_id, projects_id])
 }

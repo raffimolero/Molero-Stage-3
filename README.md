@@ -26,7 +26,7 @@ Simply run this command to enter the WSL terminal,
 wsl
 ```
 
-Then run the following lines (preferably one by one) to clone and set up the repository.
+Then run the following lines to clone and set up the repository.
 
 ```sh
 git clone https://github.com/raffimolero/Molero-Stage-1.git
@@ -90,18 +90,10 @@ npx prisma init
   - database: sysdev_management (as instructed)
 
 - encode the schema for members, projects, and member_projects in prisma/schema.prisma
-- start up the database
+- migrate
 
 ```sh
-# terminal 1
-./run.sh
-```
-
-- using a separate terminal, run the migration
-  - i'm aware that docker allows you to spawn the containers and reuse the same terminal for other things. i just decided to have an interactive bash session for convenience and because i can type `exit` instead of `docker compose down -v`
-
-```sh
-# terminal 2
+docker compose up -d
 npx prisma migrate dev --name init
 ```
 
@@ -109,3 +101,6 @@ npx prisma migrate dev --name init
 - connect to the postgres server
 - right click sysdev_management and open query tool
 - insert some members
+- insert some projects
+- insert some member/project pairings
+- run `./backup.sh`
