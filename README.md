@@ -134,7 +134,22 @@ npx prisma migrate dev --name init
 
 - truncate db to clear most data
 - run seed command
+
+```sh
+npx prisma db seed
+```
+
 - repeat previous 2 steps but for partially cleared/filled data to test
 - push and call stage 1 done
 - create new github repository -> import repository -> enter stage 1 url (cannot directly fork your own repository)
 - fix all relevant mentions of stage 1
+- create prisma database service
+
+```sh
+nest generate module prisma
+nest generate service prisma
+```
+
+- PrismaService extends PrismaClient (imported from generated/prisma_client)
+  - implements OnModuleInit
+- add PrismaModule `exports: [PrismaService],`
