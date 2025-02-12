@@ -43,6 +43,9 @@ services:
     image: dpage/pgadmin4
     restart: always
     container_name: nest-pgadmin4
+    user: '$UID:$GID'
+    volumes:
+      - ./pgadmin:/var/lib/pgadmin
     environment:
       - PGADMIN_DEFAULT_EMAIL=${PGADMIN_EMAIL}
       - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PASSWORD}
