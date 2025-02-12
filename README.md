@@ -82,6 +82,14 @@ INNER JOIN projects ON member_projects.projects_id = projects.id;
   - password is pgadmin4
 - postgresql is in localhost:5432/
 
+# Learning Resources:
+
+- YouTube NestJS + Prisma tutorial: https://www.youtube.com/watch?v=8_X0nSrzrCw
+  - i stopped as he set up the SQL database
+- NestJS + PostgreSQL + Docker: https://dev.to/chukwutosin_/step-by-step-guide-setting-up-a-nestjs-application-with-docker-and-postgresql-5hei
+  - i used Prisma in place of TypeORM
+- NestJS + Prisma REST API: https://www.prisma.io/blog/nestjs-prisma-rest-api-7D056s1BmOL0
+
 # How it was made:
 
 - nest new api
