@@ -1,6 +1,6 @@
-# Molero-Stage-1
+# Molero-Stage-2
 
-Stage 1 of the SAMAHAN SysDev technical assessment.
+Stage 2 of the SAMAHAN SysDev technical assessment.
 
 # About the project:
 
@@ -29,10 +29,10 @@ wsl
 Then run the following lines to clone and set up the repository.
 
 ```sh
-git clone https://github.com/raffimolero/Molero-Stage-1.git
-cd Molero-Stage-1
+git clone https://github.com/raffimolero/Molero-Stage-2.git
+cd Molero-Stage-2
 chmod +x ./*.sh
-./restore.sh
+./seed.sh
 ```
 
 Then run the server.
@@ -136,3 +136,5 @@ npx prisma migrate dev --name init
 - run seed command
 - repeat previous 2 steps but for partially cleared/filled data to test
 - push and call stage 1 done
+- create new github repository -> import repository -> enter stage 1 url (cannot directly fork your own repository)
+- fix all relevant mentions of stage 1
