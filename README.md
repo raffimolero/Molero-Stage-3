@@ -134,4 +134,5 @@ npx prisma migrate dev --name init
 
 - truncate db to clear most data
 - run seed command
-- repeat previous 2 steps but for partially cleared/filled data
+- repeat previous 2 steps but for partially cleared/filled data to test
+- push and call stage 1 done
