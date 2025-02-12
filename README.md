@@ -92,6 +92,12 @@ INNER JOIN projects ON member_projects.projects_id = projects.id;
 
 # How it was made:
 
+This section supplements the Git history by explaining what commands were run when.
+
+This can also be used as a sort of reviewer/notebook for building more applications like this.
+
+## Stage 1:
+
 - nest new api
 - push to github
 - remove .env from .gitignore for demo purposes
@@ -149,8 +155,12 @@ npx prisma db seed
 
 - repeat previous 2 steps but for partially cleared/filled data to test
 - push and call stage 1 done
+
+## Stage 2:
+
 - create new github repository -> import repository -> enter stage 1 url (cannot directly fork your own repository)
 - fix all relevant mentions of stage 1
+- rerun provided clone/seed script
 - create prisma database service
 
 ```sh
@@ -161,3 +171,10 @@ nest generate service prisma
 - PrismaService extends PrismaClient (imported from generated/prisma_client)
   - implements OnModuleInit
 - add PrismaModule `exports: [PrismaService],`
+- swagger
+
+```sh
+npm install --save @nestjs/swagger swagger-ui-express
+```
+
+- build swagger docs in main.ts
