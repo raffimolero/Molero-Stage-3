@@ -57,6 +57,23 @@ pgAdmin is also available through http://localhost:5050/ (note that pgadmin take
   - ![img](docs/pgadmin/4_query/4-1_select_tables.png)
   - ![img](docs/pgadmin/4_query/4-2_insert.png)
 
+# Sample SQL
+
+```sql
+SELECT * FROM members;
+SELECT * FROM projects;
+SELECT * FROM member_projects;
+
+TRUNCATE TABLE members CASCADE;
+TRUNCATE TABLE projects CASCADE;
+TRUNCATE TABLE member_projects CASCADE;
+
+SELECT *
+FROM member_projects
+INNER JOIN members ON member_projects.member_id = members.id
+INNER JOIN projects ON member_projects.projects_id = projects.id;
+```
+
 # Other Notes:
 
 - nestjs is in localhost:3000/
@@ -105,3 +122,16 @@ npx prisma migrate dev --name init
 - insert some projects
 - insert some member/project pairings
 - run `./backup.sh`
+- realize that there is a separate db seed command
+- create prisma/seed.ts
+- modify package.json
+
+```json
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  }
+```
+
+- truncate db to clear most data
+- run seed command
+- repeat previous 2 steps but for partially cleared/filled data
