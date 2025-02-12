@@ -43,7 +43,7 @@ Then run the server.
 
 After the docker engine runs, you should be able to access the api through http://localhost:3000/
 
-pgAdmin is also available through http://localhost:5050/
+pgAdmin is also available through http://localhost:5050/ (note that pgadmin takes a whole 10-20s after nestjs to start up on my machine)
 
 - I followed this tutorial so refer to it when using pgAdmin https://dev.to/chukwutosin_/step-by-step-guide-setting-up-a-nestjs-application-with-docker-and-postgresql-5hei
 - Should look something like this when setting up:
@@ -54,7 +54,8 @@ pgAdmin is also available through http://localhost:5050/
   - ![img](docs/pgadmin/2_addserver/2-2_connection.png)
   - ![img](docs/pgadmin/3_tables.png)
   - ![img](docs/pgadmin/4_query.png)
-  - ![img](docs/pgadmin/4_query/4-1_tables.png)
+  - ![img](docs/pgadmin/4_query/4-1_select_tables.png)
+  - ![img](docs/pgadmin/4_query/4-2_insert.png)
 
 # Other Notes:
 
