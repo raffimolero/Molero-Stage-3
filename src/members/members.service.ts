@@ -7,8 +7,19 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class MembersService {
   constructor(private readonly prisma: PrismaService) {}
 
-  create(createMemberDto: CreateMemberDto) {
-    return this.prisma.members.create({ data: createMemberDto });
+  /*
+    NOTE: for better error messages and swagger api, look into prisma-generator-class-validator and have that generate the DTOs
+    generator classValidator {
+      provider = "prisma-generator-class-validator"
+      output   = "./generated/validators"
+    }
+  */
+  async create(createMemberDto: CreateMemberDto) {
+    const member = await this.prisma.members.create({ data: createMemberDto });
+    return {
+      message: 'Member added successfully.',
+      data: member,
+    };
   }
 
   // findAll() {

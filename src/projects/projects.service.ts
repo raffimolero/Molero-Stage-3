@@ -12,17 +12,18 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class ProjectsService {
   constructor(private readonly prisma: PrismaService) {}
 
-  findAllMembers(id: number) {
-    return this.prisma.projects
-      .findUniqueOrThrow({ where: { id } })
-      .then((_res) =>
-        this.prisma.member_projects.findMany({
-          select: { member: true },
-          where: { projects_id: id },
-        }),
-      )
-      .then((res) => ({ data: res }))
-      .catch((res) => new NotFoundException('Project does not exist.'));
+  async findAllMembers(id: number) {
+    const project = await this.prisma.projects.findUnique({ where: { id } });
+    if (project === null) {
+      throw new NotFoundException('Project does not exist.');
+    }
+
+    const members = await this.prisma.member_projects.findMany({
+      select: { member: true },
+      where: { projects_id: id },
+    });
+
+    return { data: members };
   }
 
   // create(createProjectDto: CreateProjectDto) {
