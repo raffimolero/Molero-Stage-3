@@ -196,3 +196,7 @@ nest generate resource
 - do the same for projects get endpoint (find all members associated with a project, as instructed)
 - return a 404 if project does not exist
 - push and call stage 2 done
+
+## Stage 3:
+
+- read about validation with prisma+nestjs+swagger https://www.npmjs.com/package/@brakebein/prisma-generator-nestjs-dto
