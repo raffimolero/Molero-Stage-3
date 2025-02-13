@@ -208,3 +208,4 @@ npm install --save-dev @brakebein/prisma-generator-nestjs-dto
 ```
 
 - add dto generator to schema.prisma
+- add global validation pipe to main.ts
