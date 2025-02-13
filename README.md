@@ -194,3 +194,4 @@ nest generate resource
 - improve members create endpoint (as instructed)
 - disable all other endpoints, but keep them for reference
 - do the same for projects get endpoint (find all members associated with a project, as instructed)
+- return a 404 if project does not exist

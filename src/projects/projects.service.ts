@@ -1,4 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import {
+  HttpException,
+  HttpStatus,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
@@ -8,13 +13,16 @@ export class ProjectsService {
   constructor(private readonly prisma: PrismaService) {}
 
   findAllMembers(id: number) {
-    return this.prisma.member_projects
-      .findMany({
-        select: { member: true },
-        where: { projects_id: id },
-      })
+    return this.prisma.projects
+      .findUniqueOrThrow({ where: { id } })
+      .then((_res) =>
+        this.prisma.member_projects.findMany({
+          select: { member: true },
+          where: { projects_id: id },
+        }),
+      )
       .then((res) => ({ data: res }))
-      .catch((res) => ({ message: 'Error.', data: res }));
+      .catch((res) => new NotFoundException('Project does not exist.'));
   }
 
   // create(createProjectDto: CreateProjectDto) {

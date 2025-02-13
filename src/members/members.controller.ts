@@ -14,6 +14,14 @@ import { Prisma } from 'generated/prisma_client';
 export class MembersController {
   constructor(private readonly membersService: MembersService) {}
 
+  /*
+    NOTE: for better error messages, look into prisma-generator-class-validator and have that generate the DTOs
+    generator classValidator {
+      provider = "prisma-generator-class-validator"
+      output   = "./generated/validators"
+    }
+  */
+
   @Post()
   create(@Body() createMemberDto: Prisma.membersCreateInput) {
     return this.membersService
@@ -22,10 +30,7 @@ export class MembersController {
         message: 'Member added successfully.',
         data: res,
       }))
-      .catch((res) => ({
-        message: 'error',
-        data: res,
-      }));
+      .catch((err) => err);
   }
 
   // @Get()
