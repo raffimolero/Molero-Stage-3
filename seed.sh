@@ -12,3 +12,4 @@ npx prisma migrate deploy
 npx prisma db seed
 
 docker compose down
+echo "Seeded. Now try ./run.sh"
