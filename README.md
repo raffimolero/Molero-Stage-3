@@ -192,4 +192,5 @@ nest generate resource
 - create constructor for MembersService to connect to Prisma db
 - attach all relevant DB operations to prisma
 - improve members create endpoint (as instructed)
-- disable all other endpoints
+- disable all other endpoints, but keep them for reference
+- do the same for projects get endpoint (find all members associated with a project, as instructed)

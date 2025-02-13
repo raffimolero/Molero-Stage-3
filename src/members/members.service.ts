@@ -1,12 +1,13 @@
 import { Injectable } from '@nestjs/common';
+import { CreateMemberDto } from './dto/create-member.dto';
+// import { UpdateMemberDto } from './dto/update-member.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { Prisma } from 'generated/prisma_client';
 
 @Injectable()
 export class MembersService {
   constructor(private readonly prisma: PrismaService) {}
 
-  create(createMemberDto: Prisma.membersCreateInput) {
+  create(createMemberDto: CreateMemberDto) {
     return this.prisma.members.create({ data: createMemberDto });
   }
 
@@ -18,7 +19,7 @@ export class MembersService {
   //   return this.prisma.members.findUnique({ where: { id } });
   // }
 
-  // update(id: number, updateMemberDto: Prisma.membersUpdateInput) {
+  // update(id: number, updateMemberDto: UpdateMemberDto) {
   //   return this.prisma.members.update({ where: { id }, data: updateMemberDto });
   // }
 
