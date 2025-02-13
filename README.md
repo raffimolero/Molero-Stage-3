@@ -200,3 +200,11 @@ nest generate resource
 ## Stage 3:
 
 - read about validation with prisma+nestjs+swagger https://www.npmjs.com/package/@brakebein/prisma-generator-nestjs-dto
+- install it alongside class-validator
+
+```sh
+npm install --save class-validator class-transformer
+npm install --save-dev @brakebein/prisma-generator-nestjs-dto
+```
+
+- add dto generator to schema.prisma

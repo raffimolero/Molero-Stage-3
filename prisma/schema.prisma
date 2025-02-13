@@ -9,6 +9,14 @@ generator client {
   output   = "../generated/prisma_client"
 }
 
+generator nestjsDto {
+  provider        = "prisma-generator-nestjs-dto"
+  output          = "../generated/nestjs-dto"
+  classValidation = "true"
+  fileNamingStyle = "snake"
+  prettier        = "true"
+}
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
@@ -17,8 +25,8 @@ datasource db {
 model members {
   id              Int               @id @default(autoincrement())
   name            String            @db.VarChar(255)
-  // NOTE: role must only be one of 'backend' | 'frontend' | 'UI/UX'
   // this would ideally an enum, but requirements specify special characters
+  /// @IsIn(['backend', 'frontend', 'UI/UX'])
   role            String            @db.VarChar(255)
   created_at      DateTime          @default(now())
   updated_at      DateTime          @updatedAt
