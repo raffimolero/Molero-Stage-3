@@ -1,6 +1,6 @@
-# Molero-Stage-2
+# Molero-Stage-3
 
-Stage 2 of the SAMAHAN SysDev technical assessment.
+Stage 3 of the SAMAHAN SysDev technical assessment.
 
 # About the project:
 
@@ -29,8 +29,8 @@ wsl
 Then run the following lines to clone and set up the repository.
 
 ```sh
-git clone https://github.com/raffimolero/Molero-Stage-2.git
-cd Molero-Stage-2
+git clone https://github.com/raffimolero/Molero-Stage-3.git
+cd Molero-Stage-3
 chmod +x ./*.sh
 ./seed.sh
 ```
@@ -77,6 +77,7 @@ INNER JOIN projects ON member_projects.projects_id = projects.id;
 # Other Notes:
 
 - nestjs is in localhost:3000/
+  - swagger API is in localhost:3000/api
 - pgadmin is in localhost:5050/
   - username is admin@admin.com
   - password is pgadmin4
