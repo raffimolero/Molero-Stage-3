@@ -41,7 +41,7 @@ Then run the server.
 ./run.sh
 ```
 
-After the docker engine runs, you should be able to access the api through http://localhost:3000/
+After the docker engine runs, you should be able to access the api through http://localhost:3000/api
 
 pgAdmin is also available through http://localhost:5050/ (note that pgadmin takes a whole 10-20s after nestjs to start up on my machine)
 
@@ -210,3 +210,6 @@ npm install --save-dev @brakebein/prisma-generator-nestjs-dto
 
 - add dto generator to schema.prisma
 - add global validation pipe to main.ts
+- clean up cold start scripts and test on multiple machines
+- push and call stage 3 done
+- fix the other 2 stages
