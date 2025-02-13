@@ -8,7 +8,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { MembersService } from './members.service';
-import { CreateMembersDto } from 'src/generated/nestjs-dto/create-members.dto';
+import { CreateMembersDto } from './dto/create-members.dto';
 
 @Controller('members')
 export class MembersController {

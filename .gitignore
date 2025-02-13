@@ -6,7 +6,8 @@
 /dist
 /node_modules
 /build
-generated/
+dto/
+entities/
 
 # Logs
 logs
