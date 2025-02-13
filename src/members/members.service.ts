@@ -10,19 +10,19 @@ export class MembersService {
     return this.prisma.members.create({ data: createMemberDto });
   }
 
-  findAll() {
-    return this.prisma.members.findMany();
-  }
+  // findAll() {
+  //   return this.prisma.members.findMany();
+  // }
 
-  findOne(id: number) {
-    return this.prisma.members.findUnique({ where: { id } });
-  }
+  // findOne(id: number) {
+  //   return this.prisma.members.findUnique({ where: { id } });
+  // }
 
-  update(id: number, updateMemberDto: Prisma.membersUpdateInput) {
-    return this.prisma.members.update({ where: { id }, data: updateMemberDto });
-  }
+  // update(id: number, updateMemberDto: Prisma.membersUpdateInput) {
+  //   return this.prisma.members.update({ where: { id }, data: updateMemberDto });
+  // }
 
-  remove(id: number) {
-    return this.prisma.members.delete({ where: { id } });
-  }
+  // remove(id: number) {
+  //   return this.prisma.members.delete({ where: { id } });
+  // }
 }

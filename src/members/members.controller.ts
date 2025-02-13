@@ -16,29 +16,38 @@ export class MembersController {
 
   @Post()
   create(@Body() createMemberDto: Prisma.membersCreateInput) {
-    return this.membersService.create(createMemberDto);
+    return this.membersService
+      .create(createMemberDto)
+      .then((res) => ({
+        message: 'Member added successfully.',
+        data: res,
+      }))
+      .catch((res) => ({
+        message: 'error',
+        data: res,
+      }));
   }
 
-  @Get()
-  findAll() {
-    return this.membersService.findAll();
-  }
+  // @Get()
+  // findAll() {
+  //   return this.membersService.findAll();
+  // }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.membersService.findOne(+id);
-  }
+  // @Get(':id')
+  // findOne(@Param('id') id: string) {
+  //   return this.membersService.findOne(+id);
+  // }
 
-  @Patch(':id')
-  update(
-    @Param('id') id: string,
-    @Body() updateMemberDto: Prisma.membersUpdateInput,
-  ) {
-    return this.membersService.update(+id, updateMemberDto);
-  }
+  // @Patch(':id')
+  // update(
+  //   @Param('id') id: string,
+  //   @Body() updateMemberDto: Prisma.membersUpdateInput,
+  // ) {
+  //   return this.membersService.update(+id, updateMemberDto);
+  // }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.membersService.remove(+id);
-  }
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.membersService.remove(+id);
+  // }
 }
