@@ -6,12 +6,11 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma_client"
+  output   = "../src/generated/prisma_client"
 }
 
 generator nestjsDto {
   provider        = "prisma-generator-nestjs-dto"
-  output          = "../generated/nestjs-dto"
   classValidation = "true"
   fileNamingStyle = "snake"
   prettier        = "true"
